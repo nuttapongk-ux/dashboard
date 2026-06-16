@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Tech Support 2026 - Infographic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#1d4ed8',     /* น้ำเงินหลัก Payso */
+                        brandLightBlue: '#3b82f6',/* น้ำเงินสว่าง */
+                        brandAmber: '#fcd34d',   /* แถบสีทอง */
+                        brandOrange: '#f97316',  /* ส้มทีม Dev */
+                        brandGreen: '#10b981',   /* เขียว Boonlue */
+                        bgTemplate: '#edf1fc',   /* สีพื้นหลังพาสเทลละมุนตามภาพ */
+                        navyDark: '#1e3b8b',     /* สีกรมท่าสำหรับหัวข้อหลัก */
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans Thai"', '"Inter"', 'sans-serif'],
+                        number: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Noto Sans Thai', 'Inter', sans-serif;
+            background-color: #f1f5f9;
+        }
+        
+        /* สัดส่วนสไลด์ระดับพรีเมียม รองรับความยืดหยุ่นในทุกสกรีน */
+        .slide-container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            background-color: #ffffff;
+            box-shadow: 0 25px 50px -12px rgba(30, 41, 59, 0.12);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* การทำทรานซิชันสมูทเวลาโต้ตอบกับปุ่มฟิลเตอร์และกราฟ */
+        .bar-transition {
+            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease;
+        }
+        
+        .bar-transition:hover {
+            transform: scaleY(1.03);
+            filter: brightness(1.08);
+        }
+
+        /* เอฟเฟกต์วงแสงสีแดงเรืองแสงที่มุมซ้ายล่าง */
+        .glow-red {
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.8) 0%, rgba(239, 68, 68, 0) 70%);
+            filter: blur(16px);
+        }
+        
+        /* เอฟเฟกต์ Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Loading spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(29, 78, 216, 0.15);
+            border-top: 4px solid #1d4ed8;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Bar grow animation */
+        .bar-grow {
+            transform-origin: bottom;
+            animation: growUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+        @keyframes growUp {
+            from { transform: scaleY(0); }
+            to { transform: scaleY(1); }
+        }
+
+        /* Donut chart animation */
+        @keyframes drawDonut {
+            to { stroke-dasharray: var(--dasharray); }
+        }
+
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Live pulse */
+        .live-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800 p-3 sm:p-6">
+
+    <div class="slide-container border border-slate-100 flex flex-col min-h-[860px]">
+        
+        <header class="relative bg-white pt-6 pb-5 px-8 flex justify-between items-center">
+            <div class="flex-1 text-center">
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1d4ed8] tracking-tight">
+                    Performance Tech Support 2026
+                </h1>
+            </div>
+            <div class="absolute right-6 top-6 flex items-center gap-1.5 bg-slate-50 border border-slate-100 px-3.5 py-1.5 rounded-xl shadow-sm hover:scale-105 transition-transform duration-300">
+                <div class="flex">
+                    <div class="w-3.5 h-5.5 bg-[#1d4ed8] rounded-sm transform skew-x-[-15deg]"></div>
+                    <div class="w-3.5 h-5.5 bg-[#ef4444] rounded-sm transform skew-x-[-15deg] -ml-1.5"></div>
+                </div>
+                <span class="text-[#1e3a8a] font-black text-xl italic tracking-tighter">payso</span>
+            </div>
+        </header>
+
+        <div class="h-8 bg-gradient-to-r from-[#ffe17d] via-[#ffd066] to-[#ffbe5c] border-b border-amber-200"></div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="flex-grow bg-bgTemplate p-6 sm:p-8 flex flex-col items-center justify-center gap-4">
+            <div class="spinner"></div>
+            <p class="text-sm font-semibold text-slate-500">กำลังโหลดข้อมูลจาก Google Sheets...</p>
+        </div>
+
+        <!-- Error State (hidden by default) -->
+        <div id="errorState" class="flex-grow bg-bgTemplate p-6 sm:p-8 flex-col items-center justify-center gap-4 hidden">
+            <svg class="w-12 h-12 text-red-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+            <p class="text-sm font-semibold text-red-500">ไม่สามารถโหลดข้อมูลได้</p>
+            <p id="errorDetail" class="text-xs text-slate-500 max-w-lg text-center break-words bg-white p-2 rounded border border-slate-200"></p>
+            <button onclick="init()" class="mt-2 px-4 py-2 bg-brandBlue text-white text-xs font-bold rounded-lg hover:bg-blue-700 transition-colors">ลองใหม่อีกครั้ง</button>
+        </div>
+
+        <!-- Dashboard Content (hidden until data loads) -->
+        <div id="dashboardContent" class="flex-grow bg-bgTemplate p-6 sm:p-8 flex flex-col gap-6 relative z-10 hidden">
+            
+            <!-- Filter Header -->
+            <div class="flex justify-between items-center bg-white p-4 rounded-2xl shadow-sm border border-slate-100 fade-in">
+                <h2 class="text-lg font-extrabold text-navyDark flex items-center gap-2">
+                    <svg class="w-5 h-5 text-brandBlue" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                    </svg>
+                    ตัวกรองข้อมูล (Filters)
+                </h2>
+                <div class="flex items-center gap-3">
+                    <select id="monthFilter" class="bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-brandBlue focus:border-brandBlue block p-2.5 shadow-sm font-semibold outline-none cursor-pointer hover:bg-slate-100 transition-colors" onchange="updateDashboard()">
+                        <option value="all">ทุกเดือน (All Months)</option>
+                    </select>
+                    <select id="statusFilter" class="bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-brandBlue focus:border-brandBlue block p-2.5 shadow-sm font-semibold outline-none cursor-pointer hover:bg-slate-100 transition-colors" onchange="updateDashboard()">
+                        <option value="all">ทุกสถานะ (All Statuses)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                
+                <div class="lg:col-span-4 flex flex-col gap-6">
+                
+                <!-- Key Metrics Card -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100/80 flex flex-col justify-between fade-in">
+                    <h2 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                        <span class="p-1.5 bg-blue-50 text-brandLightBlue rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.281m5.94 2.281l-2.28 5.941" />
+                            </svg>
+                        </span>
+                        สถิติสำคัญภาพรวม (Key Metrics)
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="p-4 bg-[#f8fafc] rounded-xl border-l-[5px] border-brandBlue flex flex-col justify-center shadow-sm">
+                            <p class="text-xs text-slate-500 font-semibold mb-1">ปริมาณทิกเก็ตรวมทั้งหมด</p>
+                            <p class="text-3xl sm:text-4xl font-number font-black text-brandBlue">
+                                <span id="totalTickets">—</span> <span class="text-sm font-sans font-normal text-slate-500 ml-1">เคส</span>
+                            </p>
+                        </div>
+                        
+                        <div class="p-4 bg-[#f0fdf4] rounded-xl border-l-[5px] border-emerald-500 flex flex-col justify-center shadow-sm">
+                            <div class="flex justify-between items-center mb-1">
+                                <p class="text-xs text-slate-500 font-semibold">Resolution Rate</p>
+                                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                </svg>
+                            </div>
+                            <p class="text-3xl sm:text-4xl font-number font-black text-emerald-600" id="resolutionRate">—%</p>
+                            <p class="text-[11px] text-emerald-700/90 mt-1 font-medium" id="resolutionDesc">อัตราปิดเคสสำเร็จเฉลี่ย</p>
+                        </div>
+                    </div>
+
+                    <!-- Live data indicator -->
+                    <div class="flex items-center gap-1.5 mt-4 pt-3 border-t border-slate-100">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full live-pulse"></div>
+                        <span class="text-[10px] text-slate-400 font-semibold" id="lastUpdated">Live Data จาก Google Sheets</span>
+                    </div>
+                </div>
+
+                <!-- Workload Card -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100/80 flex-grow flex flex-col justify-between fade-in" style="animation-delay: 0.15s">
+                    <div>
+                        <h2 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                            <span class="p-1.5 bg-orange-50 text-brandOrange rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 .621-.504 1.125-1.125 1.125H4.875A1.125 1.125 0 013.75 18.4V14.15m16.5 0c0-1.077-.428-2.115-1.192-2.879l-1.442-1.442A2.25 2.25 0 0016.061 9.25H7.938a2.25 2.25 0 00-1.576.654L4.92 11.348c-.764.764-1.192 1.802-1.192 2.88m16.5 0c0 .414-.336.75-.75.75h-15a.75.75 0 01-.75-.75m16.5 0H3.75" />
+                                </svg>
+                            </span>
+                            สัดส่วนรับผิดชอบงาน (Workload)
+                        </h2>
+                        
+                        <div class="space-y-4 mt-4" id="workloadBars">
+                            <!-- Dynamically rendered -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Card -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100/80 flex flex-col justify-between fade-in" style="animation-delay: 0.2s">
+                    <h2 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                        <span class="p-1.5 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                            </svg>
+                        </span>
+                        สถานะการดำเนินการ (Ticket Status)
+                    </h2>
+                    
+                    <div class="grid grid-cols-2 gap-3" id="statusGrid">
+                        <!-- Dynamically rendered -->
+                    </div>
+                </div>
+
+                <!-- Issue Type Card -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100/80 flex flex-col justify-between fade-in" style="animation-delay: 0.25s">
+                    <h2 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                        <span class="p-1.5 bg-rose-50 text-rose-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+                            </svg>
+                        </span>
+                        ประเภทงาน (Issue Type)
+                    </h2>
+                    
+                    <div class="grid grid-cols-2 gap-3" id="issueTypeGrid">
+                        <!-- Dynamically rendered -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="lg:col-span-8 flex flex-col gap-4 sm:gap-6 lg:gap-8">
+                
+                <div class="glass-card p-6 rounded-2xl shadow-md flex flex-col fade-in" style="animation-delay: 0.3s">
+                    
+                    <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 mb-6 pb-4 border-b border-slate-200/40">
+                        <div>
+                            <h3 class="text-lg font-extrabold text-navyDark">ปริมาณงานแยกตามรายเดือน (2026)</h3>
+                            <p class="text-xs text-slate-500">เปรียบเทียบสัดส่วนทีม Support และทีมประสานภายนอก</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-start xl:justify-end gap-5 mb-5 text-xs font-bold text-slate-600">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 bg-brandBlue rounded-full shadow-sm"></span>
+                            <span>Nuttapong (Support 1)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 bg-brandGreen rounded-full shadow-sm"></span>
+                            <span>Boonlue (Support 2)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 bg-brandOrange rounded-full shadow-sm"></span>
+                            <span>Dev Team (ส่งต่อ)</span>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full h-[380px] mt-8 mb-12 px-2">
+                        <!-- Grid Lines (dynamic) -->
+                        <div class="absolute inset-0 pointer-events-none opacity-40 z-0 border-b border-slate-300" id="gridLines">
+                            <!-- Dynamically rendered -->
+                        </div>
+
+                        <!-- Bar Chart (dynamic) -->
+                        <div class="absolute inset-0 z-10 flex justify-between items-end gap-2 sm:gap-4" id="barChart">
+                            <!-- Dynamically rendered -->
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Overview Charts Section (Donuts) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+                <!-- Status Chart -->
+                <div class="glass-card p-6 rounded-2xl shadow-md flex flex-col fade-in" style="animation-delay: 0.4s">
+                    <h3 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                        <span class="p-1.5 bg-emerald-50 text-emerald-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                            </svg>
+                        </span>
+                        สัดส่วนสถานะทิกเก็ต (Ticket Status)
+                    </h3>
+                    <div id="donutStatus" class="flex-grow flex items-center justify-center py-4"></div>
+                </div>
+
+                <!-- Issue Type Chart -->
+                <div class="glass-card p-6 rounded-2xl shadow-md flex flex-col fade-in" style="animation-delay: 0.5s">
+                    <h3 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                        <span class="p-1.5 bg-rose-50 text-rose-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                            </svg>
+                        </span>
+                        สัดส่วนประเภทงาน (Issue Type)
+                    </h3>
+                    <div id="donutIssueType" class="flex-grow flex items-center justify-center py-4"></div>
+                </div>
+            </div>
+            </div>
+
+            </div>
+
+            <!-- Top 10 Sub Category Section -->
+            <div class="lg:col-span-12 glass-card p-6 rounded-2xl shadow-md flex flex-col mt-2 fade-in" style="animation-delay: 0.55s">
+                <h3 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                    <span class="p-1.5 bg-indigo-50 text-indigo-500 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                        </svg>
+                    </span>
+                    10 อันดับหมวดหมู่ย่อย (Top 10 Sub Categories)
+                </h3>
+                <div id="subCategoryList" class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 py-2">
+                    <!-- Dynamically rendered -->
+                </div>
+            </div>
+
+            <!-- Raw Data Table Section -->
+            <div class="lg:col-span-12 glass-card p-6 rounded-2xl shadow-md flex flex-col mt-2 fade-in" style="animation-delay: 0.6s">
+                <h3 class="text-md sm:text-lg font-extrabold text-navyDark mb-4 flex items-center gap-2 pb-3 border-b border-slate-100">
+                    <span class="p-1.5 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 16.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                        </svg>
+                    </span>
+                    ข้อมูลดิบ (Raw Data) <span class="text-xs text-slate-400 font-medium ml-2" id="tableCount"></span>
+                </h3>
+                
+                <div class="overflow-x-auto overflow-y-auto max-h-[500px] rounded-xl border border-slate-200 custom-scrollbar">
+                    <table class="w-full text-left text-xs sm:text-sm text-slate-600">
+                        <thead class="bg-slate-50 text-slate-700 uppercase font-bold sticky top-0 shadow-sm z-10">
+                            <tr>
+                                <th class="px-4 py-3 whitespace-nowrap">Key</th>
+                                <th class="px-4 py-3 min-w-[200px] max-w-[400px]">Summary</th>
+                                <th class="px-4 py-3 whitespace-nowrap">Issue Type</th>
+                                <th class="px-4 py-3 whitespace-nowrap">Assignee</th>
+                                <th class="px-4 py-3 whitespace-nowrap">Status</th>
+                                <th class="px-4 py-3 whitespace-nowrap">Created</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rawDataTableBody" class="divide-y divide-slate-100">
+                            <!-- Dynamically rendered -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+        <footer class="relative bg-gradient-to-r from-brandBlue to-[#3b82f6] px-8 py-5 flex justify-between items-center text-white text-xs font-bold overflow-hidden z-20 mt-auto">
+            
+            <div class="absolute bottom-0 left-0 w-48 h-full pointer-events-none overflow-hidden select-none z-0">
+                <div class="absolute -bottom-3 -left-6 w-32 h-32 bg-[#1d4ed8] rounded-full filter blur-[1px] transform scale-x-150 opacity-95 z-10"></div>
+                <div class="absolute -bottom-5 left-12 w-24 h-24 glow-red rounded-full opacity-95 z-0"></div>
+            </div>
+
+            <div class="relative z-10 pl-6 flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity duration-300">
+                <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a9.003 9.003 0 018.716 2.253M12 3a9.003 9.003 0 00-8.716 2.253M12 3v18" />
+                </svg>
+                <a href="https://www.payso.co" target="_blank" class="hover:underline tracking-wide">www.payso.co</a>
+            </div>
+
+            <div class="relative z-10 uppercase tracking-[0.25em] opacity-90 text-[11px]">
+                Confidential
+            </div>
+        </footer>
+
+    </div>
+
+<script>
+// ============================================================
+// Configuration
+// ============================================================
+const SHEET_ID = '1jQLL3KEfQmzgQ144hwrXuTTU5hP6AUFjlQRM1OYaz8Q';
+const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
+
+const THAI_MONTHS = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+const FULL_THAI_MONTHS = ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'];
+const EN_MONTHS = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+const TH_MONTHS = {'ม.ค.':0,'ก.พ.':1,'มี.ค.':2,'เม.ย.':3,'พ.ค.':4,'มิ.ย.':5,'ก.ค.':6,'ส.ค.':7,'ก.ย.':8,'ต.ค.':9,'พ.ย.':10,'ธ.ค.':11};
+
+let globalRows = [];
+
+// ============================================================
+// CSV Parser — handles quoted fields with commas
+// ============================================================
+function parseCSV(text) {
+    const rows = [];
+    let current = '';
+    let inQuotes = false;
+    const lines = [];
+    
+    // Split into lines respecting quoted newlines
+    for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        if (ch === '"') {
+            inQuotes = !inQuotes;
+            current += ch;
+        } else if ((ch === '\n' || ch === '\r') && !inQuotes) {
+            if (current.trim()) lines.push(current);
+            current = '';
+            if (ch === '\r' && text[i+1] === '\n') i++; // skip \r\n
+        } else {
+            current += ch;
+        }
+    }
+    if (current.trim()) lines.push(current);
+    
+    if (lines.length === 0) return [];
+    
+    // Parse header
+    const headers = parseLine(lines[0]);
+    
+    // Parse data rows
+    for (let i = 1; i < lines.length; i++) {
+        const values = parseLine(lines[i]);
+        const row = {};
+        headers.forEach((h, idx) => { row[h.replace(/^"|"$/g, '').trim()] = (values[idx] || '').replace(/^"|"$/g, '').trim(); });
+        rows.push(row);
+    }
+    return rows;
+}
+
+function parseLine(line) {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    
+    for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') {
+            if (inQuotes && line[i+1] === '"') {
+                current += '"';
+                i++;
+            } else {
+                inQuotes = !inQuotes;
+            }
+        } else if (ch === ',' && !inQuotes) {
+            result.push(current.trim());
+            current = '';
+        } else {
+            current += ch;
+        }
+    }
+    result.push(current.trim());
+    return result;
+}
+
+// ============================================================
+// Data Processing
+// ============================================================
+function categorizeAssignee(assignee) {
+    if (!assignee) return 'Dev';
+    const lower = assignee.toLowerCase();
+    if (lower.includes('nuttapong')) return 'Nuttapong';
+    if (lower.includes('boonlue') || lower.includes('lue')) return 'Boonlue';
+    return 'Dev';
+}
+
+function parseCreatedDate(dateStr) {
+    if (!dateStr) return null;
+    
+    // Format 1 (English): "30/May/26 9:19 PM"
+    const enMatch = dateStr.match(/(\d{1,2})\/(\w{3})\/(\d{2})\s+/);
+    if (enMatch) {
+        const monthIdx = EN_MONTHS[enMatch[2]];
+        if (monthIdx !== undefined) {
+            return { month: monthIdx, year: 2000 + parseInt(enMatch[3]) };
+        }
+    }
+    
+    // Format 2 (Thai): "01/ม.ค./26 10:27 ก่อนเที่ยง"
+    const thMatch = dateStr.match(/(\d{1,2})\/([^\/]+)\/(\d{2})/);
+    if (thMatch) {
+        const monthIdx = TH_MONTHS[thMatch[2]];
+        if (monthIdx !== undefined) {
+            return { month: monthIdx, year: 2000 + parseInt(thMatch[3]) };
+        }
+    }
+    
+    return null;
+}
+
+function populateMonthFilter(rows) {
+    const filterSelect = document.getElementById('monthFilter');
+    const monthsSet = new Set();
+    const monthsData = [];
+    
+    rows.forEach(row => {
+        const dateInfo = parseCreatedDate(row['Created']);
+        if (dateInfo) {
+            const key = `${dateInfo.year}-${String(dateInfo.month).padStart(2, '0')}`;
+            if (!monthsSet.has(key)) {
+                monthsSet.add(key);
+                monthsData.push({
+                    key: key,
+                    label: `${FULL_THAI_MONTHS[dateInfo.month]} ${dateInfo.year}`
+                });
+            }
+        }
+    });
+    
+    monthsData.sort((a, b) => a.key.localeCompare(b.key));
+    
+    // Preserve current selection if any
+    const currentSelection = filterSelect.value;
+    
+    filterSelect.innerHTML = '<option value="all">ทุกเดือน (All Months)</option>';
+    monthsData.forEach(m => {
+        const option = document.createElement('option');
+        option.value = m.key;
+        option.textContent = m.label;
+        filterSelect.appendChild(option);
+    });
+    
+    if (monthsSet.has(currentSelection)) {
+        filterSelect.value = currentSelection;
+    }
+}
+
+function populateStatusFilter(rows) {
+    const filterSelect = document.getElementById('statusFilter');
+    const statusSet = new Set();
+    
+    rows.forEach(row => {
+        const status = (row['Status'] || '').trim();
+        if (status) {
+            statusSet.add(status);
+        }
+    });
+    
+    const statusArray = Array.from(statusSet).sort();
+    const currentSelection = filterSelect.value;
+    
+    filterSelect.innerHTML = '<option value="all">ทุกสถานะ (All Statuses)</option>';
+    statusArray.forEach(s => {
+        const option = document.createElement('option');
+        option.value = s;
+        option.textContent = s;
+        filterSelect.appendChild(option);
+    });
+    
+    if (statusSet.has(currentSelection)) {
+        filterSelect.value = currentSelection;
+    }
+}
+
+function updateDashboard() {
+    const selectedMonth = document.getElementById('monthFilter').value;
+    const selectedStatus = document.getElementById('statusFilter').value;
+    
+    let filteredRows = globalRows;
+    
+    if (selectedMonth !== 'all') {
+        filteredRows = filteredRows.filter(row => {
+            const dateInfo = parseCreatedDate(row['Created']);
+            if (!dateInfo) return false;
+            const key = `${dateInfo.year}-${String(dateInfo.month).padStart(2, '0')}`;
+            return key === selectedMonth;
+        });
+    }
+    
+    if (selectedStatus !== 'all') {
+        filteredRows = filteredRows.filter(row => {
+            const status = (row['Status'] || '').trim();
+            return status === selectedStatus;
+        });
+    }
+    
+    const data = processData(filteredRows);
+    renderDashboard(data, filteredRows);
+}
+
+function processData(rows) {
+    const monthly = {};
+    const totals = { Nuttapong: 0, Boonlue: 0, Dev: 0 };
+    const statuses = {};
+    const issueTypes = { Task: 0, Bug: 0, Other: 0 };
+    const subCategories = {};
+    let doneCount = 0;
+    const totalTickets = rows.length;
+    
+    rows.forEach(row => {
+        const dateInfo = parseCreatedDate(row['Created']);
+        const category = categorizeAssignee(row['Assignee']);
+        let status = (row['Status'] || '').trim();
+        if (!status) status = 'Unknown';
+        
+        // Count totals
+        totals[category] = (totals[category] || 0) + 1;
+        
+        // Count Statuses dynamically
+        statuses[status] = (statuses[status] || 0) + 1;
+        if (status.toLowerCase() === 'done') {
+            doneCount++;
+        }
+        
+        // Count Issue Types
+        const issueTypeRaw = (row['Issue Type'] || '').trim().toLowerCase();
+        if (issueTypeRaw === 'task') issueTypes.Task++;
+        else if (issueTypeRaw === 'bug') issueTypes.Bug++;
+        else issueTypes.Other++;
+        
+        // Count Sub Categories
+        let subCat = (row['Sub Category'] || row['Sub Catagory'] || row['Custom field (Sub Category)'] || '').trim();
+        if (subCat) {
+            subCategories[subCat] = (subCategories[subCat] || 0) + 1;
+        }
+        
+        // Monthly breakdown
+        if (dateInfo) {
+            const key = `${dateInfo.year}-${String(dateInfo.month).padStart(2, '0')}`;
+            if (!monthly[key]) {
+                monthly[key] = { Nuttapong: 0, Boonlue: 0, Dev: 0, total: 0, month: dateInfo.month, year: dateInfo.year };
+            }
+            monthly[key][category]++;
+            monthly[key].total++;
+        }
+    });
+    
+    // Sort months
+    const sortedMonths = Object.keys(monthly).sort();
+    const monthlyArray = sortedMonths.map(k => monthly[k]);
+    
+    const totalAll = totals.Nuttapong + totals.Boonlue + totals.Dev;
+    const resolutionRate = totalAll > 0 ? (doneCount / totalAll * 100) : 0;
+    
+    return {
+        totalAll: totalAll,
+        resolutionRate: resolutionRate,
+        doneCount: doneCount,
+        monthCount: monthlyArray.length,
+        totalTickets: totalTickets,
+        totals: totals,
+        statuses: statuses,
+        issueTypes: issueTypes,
+        subCategories: subCategories,
+        percentages: {
+            Nuttapong: totalAll > 0 ? Math.round(totals.Nuttapong / totalAll * 100) : 0,
+            Boonlue: totalAll > 0 ? Math.round(totals.Boonlue / totalAll * 100) : 0,
+            Dev: totalAll > 0 ? Math.round(totals.Dev / totalAll * 100) : 0,
+        },
+        monthly: monthlyArray
+    };
+}
+
+// ============================================================
+// Rendering
+// ============================================================
+function renderDonutChart(containerId, dataArray, totalValue) {
+    let currentOffset = 0;
+    const cx = 50;
+    const cy = 50;
+    const radius = 40;
+    const circumference = 2 * Math.PI * radius;
+    
+    const validData = dataArray.filter(d => d.value > 0);
+    
+    const svgSegments = validData.map(d => {
+        const percent = d.value / totalValue;
+        const dashArray = percent * circumference;
+        const dashOffset = currentOffset;
+        currentOffset -= dashArray;
+        
+        return `
+            <circle class="transition-all duration-1000 ease-out cursor-pointer hover:stroke-[10px]" 
+                cx="${cx}" cy="${cy}" r="${radius}" 
+                fill="transparent" stroke="${d.color}" stroke-width="8"
+                stroke-dasharray="0 ${circumference}" stroke-dashoffset="${dashOffset}"
+                style="animation: drawDonut 1s ease-out forwards; animation-delay: 0.2s; --dasharray: ${dashArray} ${circumference}"
+                transform="rotate(-90 50 50)">
+                <title>${d.label}: ${d.value} (${(percent*100).toFixed(1)}%)</title>
+            </circle>
+        `;
+    }).join('');
+
+    const legendItems = validData.map(d => `
+        <div class="flex items-center gap-2 text-[11px] sm:text-xs font-bold text-slate-600 w-full">
+            <span class="w-3 h-3 rounded-full flex-shrink-0" style="background-color: ${d.color}"></span>
+            <span class="flex-grow whitespace-nowrap">${d.label}</span>
+            <span class="text-slate-400 font-number ml-2">${numberWithCommas(d.value)}</span>
+        </div>
+    `).join('');
+
+    document.getElementById(containerId).innerHTML = `
+        <div class="flex flex-row items-center justify-center gap-6 sm:gap-10 w-full px-4">
+            <div class="relative w-36 h-36 sm:w-40 sm:h-40 flex-shrink-0">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm overflow-visible">
+                    <circle cx="${cx}" cy="${cy}" r="${radius}" fill="transparent" stroke="#f1f5f9" stroke-width="8"></circle>
+                    ${svgSegments}
+                </svg>
+                <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <span class="text-xl sm:text-2xl font-black text-navyDark font-number leading-none">${numberWithCommas(totalValue)}</span>
+                    <span class="text-[10px] text-slate-400 font-bold mt-1 uppercase tracking-wider">Total</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2.5 flex-grow max-w-[150px]">
+                ${legendItems}
+            </div>
+        </div>
+    `;
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function renderDashboard(data, rawRows) {
+    // --- Render Raw Data Table ---
+    document.getElementById('tableCount').textContent = `(ทั้งหมด ${numberWithCommas(rawRows.length)} เคส)`;
+    
+    const tableBody = document.getElementById('rawDataTableBody');
+    tableBody.innerHTML = rawRows.map(row => {
+        const key = row['Issue key'] || row['Key'] || '-';
+        const summary = row['Summary'] || '-';
+        const issueType = (row['Issue Type'] || '').trim();
+        const assignee = row['Assignee'] || 'Unassigned';
+        const status = (row['Status'] || '').trim();
+        const created = row['Created'] || '-';
+        
+        let typeBadge = '';
+        if (issueType.toLowerCase() === 'task') typeBadge = '<span class="px-2 py-0.5 bg-blue-50 text-blue-600 rounded border border-blue-100 text-[10px] font-bold uppercase">Task</span>';
+        else if (issueType.toLowerCase() === 'bug') typeBadge = '<span class="px-2 py-0.5 bg-rose-50 text-rose-600 rounded border border-rose-100 text-[10px] font-bold uppercase">Bug</span>';
+        else typeBadge = `<span class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded border border-slate-200 text-[10px] font-bold uppercase">${issueType || 'None'}</span>`;
+        
+        let statusBadge = '';
+        const sLower = status.toLowerCase();
+        if (sLower === 'done') statusBadge = '<span class="px-2 py-0.5 bg-emerald-50 text-emerald-600 rounded-full border border-emerald-100 text-[10px] font-bold">Done</span>';
+        else if (sLower === 'in progress') statusBadge = '<span class="px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full border border-blue-100 text-[10px] font-bold">In Progress</span>';
+        else if (sLower === 'to dev') statusBadge = '<span class="px-2 py-0.5 bg-orange-50 text-orange-600 rounded-full border border-orange-100 text-[10px] font-bold">TO DEV</span>';
+        else if (sLower === 'pending third party') statusBadge = '<span class="px-2 py-0.5 bg-amber-50 text-amber-600 rounded-full border border-amber-100 text-[10px] font-bold">Pending</span>';
+        else statusBadge = `<span class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded-full border border-slate-200 text-[10px] font-bold">${status || 'Unknown'}</span>`;
+
+        return `
+            <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-4 py-3 font-semibold text-brandBlue whitespace-nowrap">${key}</td>
+                <td class="px-4 py-3 min-w-[200px] max-w-[400px] truncate" title="${summary}">${summary}</td>
+                <td class="px-4 py-3 whitespace-nowrap">${typeBadge}</td>
+                <td class="px-4 py-3 whitespace-nowrap font-medium text-slate-700">${assignee}</td>
+                <td class="px-4 py-3 whitespace-nowrap">${statusBadge}</td>
+                <td class="px-4 py-3 whitespace-nowrap text-[11px] text-slate-500 font-number">${created}</td>
+            </tr>
+        `;
+    }).join('');
+
+    // --- Key Metrics ---
+    document.getElementById('totalTickets').textContent = numberWithCommas(data.totalTickets);
+    
+    const rateVal = Math.floor(data.resolutionRate);
+    const ratePrefix = data.resolutionRate > rateVal ? '>' : '';
+    document.getElementById('resolutionRate').textContent = `${ratePrefix}${rateVal}%`;
+    document.getElementById('resolutionDesc').textContent = `อัตราปิดเคสสำเร็จเฉลี่ย (ตลอดช่วง ${data.monthCount} เดือน)`;
+    
+    // --- Workload Bars ---
+    const workloadContainer = document.getElementById('workloadBars');
+    const workloadItems = [
+        { key: 'Nuttapong', label: 'Nuttapong', color: 'brandBlue', gradFrom: 'brandLightBlue', gradTo: 'brandBlue', textColor: 'text-brandBlue', desc: 'จัดการสำเร็จ' },
+        { key: 'Boonlue', label: 'Boonlue', color: 'brandGreen', gradFrom: 'emerald-400', gradTo: 'brandGreen', textColor: 'text-brandGreen', desc: 'จัดการสำเร็จ' },
+        { key: 'Dev', label: 'Dev Team (ส่งต่อ)', color: 'brandOrange', gradFrom: 'amber-400', gradTo: 'brandOrange', textColor: 'text-brandOrange', desc: 'ส่งต่อเพื่อพัฒนา/แก้ไขเชิงลึก' }
+    ];
+    
+    // Find who has the highest workload
+    const maxKey = Object.entries(data.totals).sort((a, b) => b[1] - a[1])[0][0];
+    
+    workloadContainer.innerHTML = workloadItems.map(item => {
+        const pct = data.percentages[item.key];
+        const count = data.totals[item.key];
+        const isMax = item.key === maxKey;
+        const badge = isMax ? `<span class="text-[9px] bg-red-50 text-red-600 border border-red-100 px-1.5 py-0.5 rounded-md flex items-center font-bold">ภาระงานสูงสุด</span>` : '';
+        
+        return `
+            <div class="group">
+                <div class="flex justify-between items-center mb-1.5">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-${item.color} rounded-full shadow-sm"></div>
+                        <span class="text-xs sm:text-sm font-bold text-slate-700">${item.label}</span>
+                        ${badge}
+                    </div>
+                    <span class="text-sm font-black ${item.textColor} font-number">${pct}%</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden border border-slate-200/50">
+                    <div class="bg-gradient-to-r from-${item.gradFrom} to-${item.gradTo} h-full rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1 font-medium">${item.desc} ${numberWithCommas(count)} เคส</p>
+            </div>
+        `;
+    }).join('');
+    
+    // --- Status Grid ---
+    const statusContainer = document.getElementById('statusGrid');
+    const predefinedColors = {
+        'done': { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', hex: '#10b981' },
+        'in progress': { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200', hex: '#3b82f6' },
+        'to dev': { bg: 'bg-orange-50', text: 'text-orange-700', border: 'border-orange-200', hex: '#f97316' },
+        'pending': { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200', hex: '#f59e0b' },
+        'pending third party': { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200', hex: '#f59e0b' }
+    };
+    const fallbackPalette = [
+        { bg: 'bg-indigo-50', text: 'text-indigo-700', border: 'border-indigo-200', hex: '#6366f1' },
+        { bg: 'bg-pink-50', text: 'text-pink-700', border: 'border-pink-200', hex: '#ec4899' },
+        { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', hex: '#a855f7' },
+        { bg: 'bg-teal-50', text: 'text-teal-700', border: 'border-teal-200', hex: '#14b8a6' },
+        { bg: 'bg-cyan-50', text: 'text-cyan-700', border: 'border-cyan-200', hex: '#06b6d4' },
+        { bg: 'bg-fuchsia-50', text: 'text-fuchsia-700', border: 'border-fuchsia-200', hex: '#d946ef' },
+        { bg: 'bg-rose-50', text: 'text-rose-700', border: 'border-rose-200', hex: '#f43f5e' }
+    ];
+    let fallbackIdx = 0;
+    
+    const dynamicStatusData = Object.keys(data.statuses).sort((a, b) => data.statuses[b] - data.statuses[a]).map(status => {
+        const lower = status.toLowerCase();
+        let colorObj = predefinedColors[lower];
+        if (!colorObj) {
+            colorObj = fallbackPalette[fallbackIdx % fallbackPalette.length];
+            fallbackIdx++;
+        }
+        return {
+            label: status,
+            count: data.statuses[status],
+            bg: colorObj.bg,
+            text: colorObj.text,
+            border: colorObj.border,
+            hex: colorObj.hex
+        };
+    });
+    
+    statusContainer.innerHTML = dynamicStatusData.map(s => `
+        <div class="flex flex-col items-center justify-center p-3 rounded-xl border ${s.border} ${s.bg} shadow-sm hover:scale-[1.02] transition-transform">
+            <span class="text-lg sm:text-xl font-number font-black ${s.text}">${numberWithCommas(s.count)}</span>
+            <span class="text-[10px] sm:text-xs font-bold text-slate-600 mt-0.5 text-center leading-tight truncate w-full px-1" title="${s.label}">${s.label}</span>
+        </div>
+    `).join('');
+    
+    // --- Issue Type Grid ---
+    const issueTypeContainer = document.getElementById('issueTypeGrid');
+    const issueData = [
+        { label: 'Task', count: data.issueTypes.Task, color: 'blue', bg: 'bg-blue-50', text: 'text-brandBlue', border: 'border-blue-200' },
+        { label: 'Bug', count: data.issueTypes.Bug, color: 'rose', bg: 'bg-rose-50', text: 'text-rose-500', border: 'border-rose-200' }
+    ];
+    
+    if (data.issueTypes.Other > 0) {
+        issueData.push({ label: 'Other', count: data.issueTypes.Other, color: 'slate', bg: 'bg-slate-50', text: 'text-slate-600', border: 'border-slate-200' });
+    }
+    
+    issueTypeContainer.innerHTML = issueData.map(s => `
+        <div class="flex flex-col items-center justify-center p-3 rounded-xl border ${s.border} ${s.bg} shadow-sm hover:scale-[1.02] transition-transform">
+            <span class="text-lg sm:text-xl font-number font-black ${s.text}">${numberWithCommas(s.count)}</span>
+            <span class="text-[10px] sm:text-xs font-bold text-slate-600 mt-0.5 text-center leading-tight">${s.label}</span>
+        </div>
+    `).join('');
+    
+    // --- Grid Lines ---
+    const allVals = data.monthly.flatMap(m => [m.Nuttapong, m.Boonlue, m.Dev]);
+    const maxBarVal = Math.max(...allVals, 1);
+    const niceMax = Math.ceil(maxBarVal / 30) * 30;
+    const gridLevels = [niceMax, Math.round(niceMax * 2 / 3), Math.round(niceMax / 3)];
+    
+    document.getElementById('gridLines').innerHTML = gridLevels.map(val => {
+        const topPct = (1 - (val / niceMax)) * 100;
+        return `
+        <div class="absolute inset-x-0 border-b border-dashed border-slate-300 w-full" style="top: ${topPct}%">
+            <span class="absolute right-0 -top-3.5 text-[10px] font-black text-slate-400/80 px-1 rounded font-number">${val} เคส</span>
+        </div>
+    `}).join('');
+    
+    // --- Bar Chart ---
+    const barChart = document.getElementById('barChart');
+    const widthClass = data.monthly.length <= 6 ? `w-1/${data.monthly.length}` : 'flex-1';
+    
+    barChart.innerHTML = data.monthly.map((m, idx) => {
+        const nPct = (m.Nuttapong / niceMax * 100).toFixed(1);
+        const bPct = (m.Boonlue / niceMax * 100).toFixed(1);
+        const dPct = (m.Dev / niceMax * 100).toFixed(1);
+        const monthLabel = `${THAI_MONTHS[m.month]} ${m.year}`;
+        const delay = 0.1 * idx;
+        
+        return `
+            <div class="relative h-full flex flex-col justify-end items-center ${widthClass} group" style="min-width: 0;">
+                <div class="flex items-end gap-1.5 sm:gap-2 h-full w-full justify-center">
+                    <div class="bar-transition bar-grow w-3.5 sm:w-5 bg-brandBlue rounded-t-md shadow-sm relative cursor-pointer" style="height: ${nPct}%; animation-delay: ${delay}s;">
+                        <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-[11px] font-black text-brandBlue font-number">${m.Nuttapong}</span>
+                    </div>
+                    <div class="bar-transition bar-grow w-3.5 sm:w-5 bg-brandGreen rounded-t-md shadow-sm relative cursor-pointer" style="height: ${bPct}%; animation-delay: ${delay + 0.05}s;">
+                        <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-[11px] font-black text-brandGreen font-number">${m.Boonlue}</span>
+                    </div>
+                    <div class="bar-transition bar-grow w-3.5 sm:w-5 bg-brandOrange rounded-t-md shadow-sm relative cursor-pointer" style="height: ${dPct}%; animation-delay: ${delay + 0.1}s;">
+                        <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-[11px] font-black text-brandOrange font-number">${m.Dev}</span>
+                    </div>
+                </div>
+                <div class="absolute top-full mt-3 text-center w-full">
+                    <p class="text-[11px] font-extrabold text-slate-600 sm:text-xs whitespace-nowrap">${monthLabel}</p>
+                    <span class="inline-block mt-1 text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full font-number">${m.total} เคส</span>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    // --- Render Donut Charts ---
+    const statusArray = dynamicStatusData.map(s => ({
+        label: s.label,
+        value: s.count,
+        color: s.hex
+    }));
+    renderDonutChart('donutStatus', statusArray, data.totalTickets);
+
+    const issueArray = [
+        { label: 'Task', value: data.issueTypes.Task, color: '#3b82f6' }, // blue-500
+        { label: 'Bug', value: data.issueTypes.Bug, color: '#f43f5e' } // rose-500
+    ];
+    if (data.issueTypes.Other > 0) issueArray.push({ label: 'Other', value: data.issueTypes.Other, color: '#64748b' }); // slate-500
+    renderDonutChart('donutIssueType', issueArray, data.totalTickets);
+
+    // --- Render Top 10 Sub Categories ---
+    const subCatContainer = document.getElementById('subCategoryList');
+    const sortedSubCats = Object.keys(data.subCategories)
+        .sort((a, b) => data.subCategories[b] - data.subCategories[a])
+        .slice(0, 10);
+        
+    if (sortedSubCats.length === 0) {
+        subCatContainer.innerHTML = '<p class="text-sm text-slate-400 text-center py-4 md:col-span-2">ไม่พบข้อมูลหมวดหมู่ (No Sub Category data)</p>';
+    } else {
+        const maxSubCatCount = data.subCategories[sortedSubCats[0]];
+        subCatContainer.innerHTML = sortedSubCats.map((subCat, index) => {
+            const count = data.subCategories[subCat];
+            const pct = (count / maxSubCatCount) * 100;
+            const rank = index + 1;
+            return `
+                <div class="group flex items-center gap-3 sm:gap-4 hover:bg-indigo-50/50 p-2 rounded-xl transition-colors">
+                    <div class="w-6 text-center font-black text-slate-300 text-xs sm:text-sm bg-slate-100 rounded-lg py-1">#${rank}</div>
+                    <div class="flex-grow flex flex-col justify-center">
+                        <div class="flex justify-between items-end mb-1">
+                            <span class="text-xs sm:text-sm font-bold text-slate-700 truncate max-w-[200px] sm:max-w-xs" title="${subCat}">${subCat}</span>
+                            <span class="text-xs font-black text-indigo-600 font-number">${numberWithCommas(count)} <span class="text-[9px] text-slate-400 font-medium ml-0.5">เคส</span></span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-1.5 sm:h-2 overflow-hidden border border-slate-200/50">
+                            <div class="bg-gradient-to-r from-indigo-400 to-indigo-600 h-full rounded-full transition-all duration-700" style="width: ${pct}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // --- Show dashboard, hide loading ---
+    document.getElementById('loadingState').classList.add('hidden');
+    document.getElementById('errorState').classList.add('hidden');
+    document.getElementById('dashboardContent').classList.remove('hidden');
+    
+    // --- Update timestamp ---
+    const now = new Date();
+    const timeStr = now.toLocaleString('th-TH', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short', year: 'numeric' });
+    document.getElementById('lastUpdated').textContent = `Live Data • อัปเดตล่าสุด ${timeStr}`;
+}
+
+// ============================================================
+// Initialize
+// ============================================================
+async function init() {
+    document.getElementById('loadingState').classList.remove('hidden');
+    document.getElementById('errorState').classList.add('hidden');
+    document.getElementById('dashboardContent').classList.add('hidden');
+    
+    try {
+        const response = await fetch(CSV_URL);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const csvText = await response.text();
+        const rows = parseCSV(csvText);
+        
+        if (rows.length === 0) throw new Error('No data parsed');
+        
+        globalRows = rows;
+        populateMonthFilter(rows);
+        populateStatusFilter(rows);
+        updateDashboard();
+    } catch (err) {
+        console.error('Error fetching Google Sheets data:', err);
+        document.getElementById('loadingState').classList.add('hidden');
+        document.getElementById('errorState').classList.remove('hidden');
+        document.getElementById('errorState').style.display = 'flex';
+        document.getElementById('errorDetail').textContent = err.toString() + (err.stack ? '\\n' + err.stack : '');
+    }
+}
+
+// Start on page load
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
