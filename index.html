@@ -172,12 +172,15 @@
                     </svg>
                     ตัวกรองข้อมูล (Filters)
                 </h2>
-                <div class="flex items-center gap-3">
+                <div class="flex flex-wrap justify-end items-center gap-3">
                     <select id="monthFilter" class="bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-brandBlue focus:border-brandBlue block p-2.5 shadow-sm font-semibold outline-none cursor-pointer hover:bg-slate-100 transition-colors" onchange="updateDashboard()">
                         <option value="all">ทุกเดือน (All Months)</option>
                     </select>
                     <select id="statusFilter" class="bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-brandBlue focus:border-brandBlue block p-2.5 shadow-sm font-semibold outline-none cursor-pointer hover:bg-slate-100 transition-colors" onchange="updateDashboard()">
                         <option value="all">ทุกสถานะ (All Statuses)</option>
+                    </select>
+                    <select id="subCategoryFilter" class="bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-xl focus:ring-brandBlue focus:border-brandBlue block p-2.5 shadow-sm font-semibold outline-none cursor-pointer hover:bg-slate-100 transition-colors" onchange="updateDashboard()">
+                        <option value="all">ทุกหมวดหมู่ (All Sub Categories)</option>
                     </select>
                 </div>
             </div>
@@ -426,7 +429,7 @@
 // ============================================================
 // Configuration
 // ============================================================
-const SHEET_ID = '1jQLL3KEfQmzgQ144hwrXuTTU5hP6AUFjlQRM1OYaz8Q';
+const SHEET_ID = '112blhH42Q1Ob7zZx5tHzjqrXI3IvRT8uZv7kdV2-LHA';
 const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
 
 const THAI_MONTHS = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
@@ -600,9 +603,40 @@ function populateStatusFilter(rows) {
     }
 }
 
+function populateSubCategoryFilter(rows) {
+    const filterSelect = document.getElementById('subCategoryFilter');
+    const subCatSet = new Set();
+    
+    rows.forEach(row => {
+        let subCat = (row['Sub Category'] || row['Sub Catagory'] || row['Custom field (Sub Category)'] || '').trim();
+        if (subCat) {
+            subCatSet.add(subCat);
+        }
+    });
+    
+    const currentSelection = filterSelect.value;
+    
+    filterSelect.innerHTML = '<option value="all">ทุกหมวดหมู่ (All Sub Categories)</option>';
+    
+    // Allow only "ปัญหา-Tarad" in the dropdown
+    if (subCatSet.has('ปัญหา-Tarad')) {
+        const option = document.createElement('option');
+        option.value = 'ปัญหา-Tarad';
+        option.textContent = 'ปัญหา-Tarad';
+        filterSelect.appendChild(option);
+    }
+    
+    if (subCatSet.has(currentSelection)) {
+        filterSelect.value = currentSelection;
+    } else {
+        filterSelect.value = 'all';
+    }
+}
+
 function updateDashboard() {
     const selectedMonth = document.getElementById('monthFilter').value;
     const selectedStatus = document.getElementById('statusFilter').value;
+    const selectedSubCategory = document.getElementById('subCategoryFilter').value;
     
     let filteredRows = globalRows;
     
@@ -619,6 +653,13 @@ function updateDashboard() {
         filteredRows = filteredRows.filter(row => {
             const status = (row['Status'] || '').trim();
             return status === selectedStatus;
+        });
+    }
+
+    if (selectedSubCategory !== 'all') {
+        filteredRows = filteredRows.filter(row => {
+            const subCat = (row['Sub Category'] || row['Sub Catagory'] || row['Custom field (Sub Category)'] || '').trim();
+            return subCat === selectedSubCategory;
         });
     }
     
@@ -1025,6 +1066,7 @@ async function init() {
         globalRows = rows;
         populateMonthFilter(rows);
         populateStatusFilter(rows);
+        populateSubCategoryFilter(rows);
         updateDashboard();
     } catch (err) {
         console.error('Error fetching Google Sheets data:', err);
